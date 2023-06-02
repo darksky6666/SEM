@@ -2,7 +2,15 @@
     <div class="h-full">
         <p class="text-xl mb-4">Inventory</p>
         <div class="flex justify-end w-full mb-5 relative right-0">
-            @include('components.searchbar')
+            {{-- @include('components.searchbar') --}}
+            <form action="{{ route('search') }}" method="GET">
+                <div class="flex items-center border rounded-lg">
+                    <input type="text" name="query" placeholder="Search..."
+                        class="px-4 py-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <button type="submit"
+                        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Search</button>
+                </div>
+            </form>
             <a href="{{ route('addInventory') }}"
                 class="p-2 mx-2 border border-transparent rounded-xl hover:text-gray-600"
                 style="background-color: #00AEA6;">

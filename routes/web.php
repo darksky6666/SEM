@@ -5,6 +5,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\SearchController;
 
 // Change this to change the default page
 Route::get('/', function () {
@@ -20,6 +21,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// Search
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Payment Module
 // Cart
